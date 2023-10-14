@@ -35,6 +35,12 @@ Route::get('addRestaurant', [HomeController::class,'addRestaurant'])->middleware
 
 Route::post('add_process', [RestaurantController::class, 'addProcess']);
 
+Route::get('/getEditAdmin/{id}', [RestaurantController::class, 'getEditAdmin'])->name('getEditAdmin');
+
+Route::post('edit_process', [RestaurantController::class, 'editProcess']);
+
+Route::get('/getDeleteAdmin/{id}', [RestaurantController::class, 'getDeleteAdmin'])->name('getDeleteAdmin');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

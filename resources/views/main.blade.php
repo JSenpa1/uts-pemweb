@@ -11,9 +11,6 @@
     <div class="min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
         <nav class="flex items-center justify-between flex-wrap bg-blue-800 p-6">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
-              {{-- <div class="flex items-center">
-                <img src="{{ asset('logo.png') }}" class="md:h-auto lg:h-12 sm:h-6 lg:pr-5"/>
-              </div> --}}
               <span class="font-semibold text-xl tracking-tight">GML Restaurant</span>
             </div>
             <div class="flex items-center">

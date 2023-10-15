@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -32,11 +32,65 @@
                     @endauth
                 </div>
                 @endif
-            </div>
         </nav>
-        {{-- Kalau mau nambahin sesuatu disini --}}
+        <div class="container mx-auto overflow-x-auto sm:rounded-lg lg:mt-10">
+        <table class="w-full text-sm text-left text-zinc-50">
+            <thead class="text-xs uppercase bg-blue-900 text-zinc-300">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Product name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Picture
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Description
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+        </thead>
+        <?php
+            use Illuminate\Support\Facades\DB;
+
+            $products = DB::select('select * from restaurant');
+
+            foreach ($products as $product)
+            {
+        ?>
+            <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{ $product->name }}
+                    </th>
+                    <td class="px-6 py-4">
+                        <img src="storage/{{ $product->foto }}" />
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ $product->description }}
+                    </td>
+                    <td class="px-6 py-4">
+                        Rp. {{ $product->price }}
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="{{ route('checkAuth1', ['productId' => $product->id]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Add to Cart</a>
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Remove</a>
+                    </td>
+                </tr>
+        <?php
+            }
+        ?>
+        </table>
+        </div>
+        <div class="container mx-auto lg:py-16">
+          <a class="text-zinc-50 hover:text-blue-500 transition ease-in-out" href="#">Checkout</a>
+        </div>
     </div>
+
 </body>
 </html>
-
 

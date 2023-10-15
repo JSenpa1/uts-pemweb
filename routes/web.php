@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,11 @@ Route::get('/add_process', function () {
     return view('add_process');
 });
 
+Route::get('/UserMenu', function()
+{
+    return view('/UserMenu');
+});
+
 Route::get('/home', [HomeController::class,'index'])->middleware(['auth', 'verified'])->name('home');
 
 Route::get('post', [HomeController::class,'post'])->middleware(['auth', 'admin']);
@@ -40,6 +46,8 @@ Route::get('/getEditAdmin/{id}', [RestaurantController::class, 'getEditAdmin'])-
 Route::post('edit_process', [RestaurantController::class, 'editProcess']);
 
 Route::get('/getDeleteAdmin/{id}', [RestaurantController::class, 'getDeleteAdmin'])->name('getDeleteAdmin');
+
+Route::get('/checkAuth1/{productId}', [UserController::class, 'checkAuth1'])->middleware(['auth', 'verified'])->name('checkAuth1');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

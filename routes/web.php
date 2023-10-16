@@ -33,6 +33,7 @@ Route::get('/UserMenu', function()
     return view('/UserMenu');
 });
 
+
 Route::get('/home', [HomeController::class,'index'])->middleware(['auth', 'verified'])->name('home');
 
 Route::get('post', [HomeController::class,'post'])->middleware(['auth', 'admin']);
@@ -48,6 +49,8 @@ Route::post('edit_process', [RestaurantController::class, 'editProcess']);
 Route::get('/getDeleteAdmin/{id}', [RestaurantController::class, 'getDeleteAdmin'])->name('getDeleteAdmin');
 
 Route::get('/checkAuth1/{productId}', [UserController::class, 'checkAuth1'])->middleware(['auth', 'verified'])->name('checkAuth1');
+
+Route::get('/UserCart', [UserController::class, 'viewCart'])->middleware(['auth', 'verified'])->name('UserCart');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

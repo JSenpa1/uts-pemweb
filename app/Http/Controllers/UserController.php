@@ -32,7 +32,20 @@ class UserController extends Controller
 
     public function viewCart()
     {
+        if(Auth::id())
+        {
+            $usertype = Auth()->user()->usertype;
 
+            if(!isset($usertype))
+            {
+                return view('auth.register');
+            }
+
+            else
+            {
+                return view('UserCart');
+            }
+        }
     }
 }
 

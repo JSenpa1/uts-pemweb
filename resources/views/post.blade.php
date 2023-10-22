@@ -14,18 +14,18 @@
               <img src="{{ asset('logo.png') }}" class="md:h-auto lg:h-20 sm:h-6 lg:pr-5"/>
             </div>
             <div class="flex items-center flex-shrink-0 text-white mr-6">
-                <span class="font-semibold text-xl tracking-tight">GML Restaurant</span>
+                <span class="font-semibold text-4xl tracking-tight">GML Restaurant</span>
               </div>
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
               <div>
                 @if (Route::has('login'))
                     @auth
-                    <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 hover:animate-fade duration-200">Dashboard</a>
                     @else
-                    <a href="{{ route('login') }}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</a>
+                    <a href="{{ route('login') }}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 hover:animate-fade duration-200">Login</a>
 
                         @if (route::has('register'))
-                            <a href="{{ route('register') }}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Register</a>
+                            <a href="{{ route('register') }}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 hover:animate-fade duration-200">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -33,7 +33,7 @@
             </div>
         </nav>
         <div class="container mx-auto overflow-x-auto sm:rounded-lg lg:mt-10">
-        <table class="w-full text-sm text-left text-zinc-50">
+        <table class="w-full text-sm text-left dark:text-zinc-50">
             <thead class="text-xs uppercase bg-blue-900 text-zinc-300">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -86,7 +86,7 @@
         </table>
         </div>
         <div class="container mx-auto lg:py-16">
-          <a class="text-zinc-50 hover:text-blue-500 transition ease-in-out" href="{{ url('/addRestaurant') }}">Add Products</a>
+          <a class="dark:text-zinc-50 hover:text-blue-500 transition ease-in-out" href="{{ url('/addRestaurant') }}">Add Products</a>
         </div>
     </div>
 

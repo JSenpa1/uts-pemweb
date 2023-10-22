@@ -15,9 +15,9 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mx-auto">
         <div class="mx-auto max-w-7xl lg:px-8">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onclick="window.location.href='{{ url('/post')}}'">Go Home</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onclick="window.location.href='{{ url('/post')}}'">Go to Admin Page</button>
         </div>
     </div>
 

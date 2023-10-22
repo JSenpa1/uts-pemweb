@@ -47,6 +47,19 @@ class UserController extends Controller
             }
         }
     }
+
+    public function deleteCart($id)
+    {
+        DB::delete('delete from userorder where id = ?', [$id]);
+        return redirect()->to('UserCart')->send();
+    }
+
+    public function checkOut()
+    {
+        $userId = Auth()->user()->id;
+        DB::delete('delete from userorder where User_Id = ?', [$userId]);
+        return redirect()->to('UserCart')->send();
+    }
 }
 
 // $userId = 1; // Replace with the actual user ID

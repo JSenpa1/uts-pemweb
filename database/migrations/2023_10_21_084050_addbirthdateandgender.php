@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('restaurant', function (Blueprint $table)
-        {
-            $table->id();
-            $table->string('name');
-            $table->integer('price');
-            $table->string('description');
-            $table->string('gambar');
+        Schema::table('users', function (Blueprint $table) {
+            $table->date('birthdate')->nullable();
+            $table->string('gender')->nullable();
         });
     }
 
@@ -29,5 +25,3 @@ return new class extends Migration
         //
     }
 };
-
-

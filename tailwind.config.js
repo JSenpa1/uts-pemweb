@@ -14,6 +14,10 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+
+            // animation: {
+            //     bounce: 'bounce 10s ease-in-out infinite',
+            // }
         },
     },
 

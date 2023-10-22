@@ -52,6 +52,10 @@ Route::get('/checkAuth1/{productId}', [UserController::class, 'checkAuth1'])->mi
 
 Route::get('/UserCart', [UserController::class, 'viewCart'])->middleware(['auth', 'verified'])->name('UserCart');
 
+Route::get('/deleteCart/{productId}', [UserController::class, 'deleteCart'])->middleware(['auth', 'verified'])->name('deleteCart');
+
+Route::get('/checkOut', [UserController::class, 'checkOut'])->middleware(['auth', 'verified'])->name('checkOut');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

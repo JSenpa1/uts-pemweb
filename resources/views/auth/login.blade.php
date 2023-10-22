@@ -24,6 +24,15 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
+        <div class="mt-4">
+            <img src="http://uts-pemweb.test/captcha/default?Z0mGcKqu" alt="CAPTCHA Image">
+        </div>
+
+        <div class="mt-4">
+            <label for="captcha" class="form-label dark:text-white">CAPTCHA</label>
+            <input type="text" name="captcha" id="captcha" class="form-control" required>
+        </div>
+
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
@@ -39,6 +48,9 @@
                 </a>
             @endif
 
+            <x-primary-button class="ml-3" onclick="window.location.href='{{ route('register') }}'">
+                {{ __('No Account?') }}
+            </x-primary-button>
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>

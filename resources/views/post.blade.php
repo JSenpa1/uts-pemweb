@@ -14,7 +14,7 @@
               <img src="{{ asset('logo.png') }}" class="md:h-auto lg:h-20 sm:h-6 lg:pr-5"/>
             </div>
             <div class="flex items-center flex-shrink-0 text-white mr-6">
-                <span class="font-semibold text-4xl tracking-tight">GML Restaurant</span>
+                <span class="font-semibold text-4xl tracking-tight">IF 330 - GML Restaurant</span>
               </div>
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
               <div>
@@ -67,7 +67,7 @@
                         {{ $product->name }}
                     </th>
                     <td class="px-6 py-4">
-                        <img src="storage/{{ $product->foto }}" />
+                        <img class="md:w-1/4 sm:w-1/2" src="storage/{{ $product->foto }}" />
                     </td>
                     <td class="px-6 py-4">
                         {{ $product->description }}
@@ -85,8 +85,8 @@
         ?>
         </table>
         </div>
-        <div class="container mx-auto lg:py-16">
-          <a class="dark:text-zinc-50 hover:text-blue-500 transition ease-in-out" href="{{ url('/addRestaurant') }}">Add Products</a>
+        <div class="container mx-auto lg:py-16 sm:py-10">
+          <center><a class="bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded hover:animate-fade duration-200" href="{{ url('/addRestaurant') }}">Add Products</a></center>
         </div>
     </div>
 

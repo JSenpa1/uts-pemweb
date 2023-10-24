@@ -44,7 +44,7 @@
                 <img src="{{ asset('logo.png') }}" class="md:h-auto lg:h-12 sm:h-6 lg:pr-5"/>
               </div>
             <div class="flex items-center flex-shrink-0 text-white mr-6">
-              <span class="font-semibold text-4xl tracking-tight">GML Restaurant</span>
+              <span class="font-semibold text-4xl tracking-tight">IF 330 - GML Restaurant</span>
             </div>
             <div>
                 @if (Route::has('login'))
